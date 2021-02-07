@@ -64,6 +64,10 @@ ul{
 li{
   margin-top: 1rem;
 }
+
+input, 
+select,
+textarea,
 button{
   padding: 1rem;
   border-radius: 0.5rem;
@@ -76,8 +80,16 @@ button{
   cursor: pointer; 
 }
 
+button{
+  background-color: #f8f8f8;
+  cursor: pointer; 
+}
+
+input:hover, 
+select:hover,
+textarea:hover,
 button:hover{
-  border: 0.1rem solid #9d9a9a;
+  border: 0.1rem solid #828080;
 }
 button.primary{
   background-color: #f0c040;
@@ -97,6 +109,14 @@ a.brand {
   color: #ffffff;
   font-size: 3rem;
   font-weight: bold;
+}
+.badge{
+  padding: 0.2rem 0.7rem;
+  background-color: #f02020;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  margin-left: 0.2rem;
 }
 .row {
   display: flex;
