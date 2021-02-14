@@ -3,12 +3,21 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import SignInScreen from "./screens/SignInScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import { signout } from "./actions/userActions";
 
 function App() {
 
+  const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.cartItems)
+  const userSignIn = useSelector(state => state.userSignIn)
+  const { userInfo } = userSignIn
 
+  const signoutHandler = () => {
+    dispatch(signout())
+  }
   return (
     <Router>
       <div className="grid-container">
@@ -24,14 +33,25 @@ function App() {
                 <span className='badge'> {cartItems.length} </span> 
               )} 
             </Link>
-            <Link to="/signin">Sign In</Link>
+            { userInfo
+              ? <div className='dropdown'> 
+                <Link to="#"> { userInfo.name } <i className='fa fa-caret-down'></i> </Link>
+                <ul className='dropdown-content'>
+                  <Link to='#signout' onClick={signoutHandler}> Sign Out </Link>
+                </ul>
+
+              </div>
+              : <Link to="/signin"> Sign In </Link>
+            }
           </div>
         </header>
         <main>
           
-          <Route path="/"exact  component={HomeScreen} />
-          <Route path='/product/:id' component={ProductScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
+          <Route path='/product/:id' component={ProductScreen} />
+          <Route path='/signin' component={SignInScreen} />
+          <Route path='/register' component={RegisterScreen} />
+          <Route path='/' exact  component={HomeScreen} />
           
         </main>
         <footer className="row center">All right reserved</footer>
