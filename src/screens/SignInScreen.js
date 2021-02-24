@@ -2,6 +2,7 @@ import React, { useState , useEffect } from 'react'
 import { useDispatch , useSelector} from 'react-redux';
 import {Link} from 'react-router-dom'
 import {signIn} from '../actions/userActions';
+// import CheckoutSteps from '../components/CheckoutSteps';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
@@ -47,6 +48,7 @@ const SignInScreen = (props) => {
                     <input type='password' onChange={ e => setPassword(e.target.value) } placeholder='Enter Password'/> 
                 </div>
                 <div>
+                    <label/>
                     <button className='primary' type='submit'>Sign In</button>
                 </div>
                 <div>

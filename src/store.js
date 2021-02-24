@@ -8,7 +8,11 @@ const initialState = {
     cart: { 
         cartItems: localStorage.getItem('cartItems') 
             ? JSON.parse(localStorage.getItem('cartItems'))
-            : []
+            : [],
+        shippingAddress: localStorage.getItem('shippingAddress') 
+            ? JSON.parse(localStorage.getItem('shippingAddress'))
+            : {},
+        paymentMethod: 'PayPal'
     },
     userSignIn: {
         userInfo: localStorage.getItem('userInfo')

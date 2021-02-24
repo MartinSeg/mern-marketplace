@@ -228,7 +228,7 @@ img.large{
 
 .form label{
   margin: 1rem 0;
-  display: block
+  /* display: block */
 } 
 
 
@@ -254,4 +254,19 @@ img.large{
 
 .dropdown:hover .dropdown-content{
   display:block
+}
+
+
+/* CHECKOUT - STEPS */
+
+.checkout-steps > div{
+  border-top: 0.3rem solid #c0c0c0 ;
+  color: #c0c0c0;
+  flex:1;
+  padding: 1rem;
+}
+
+.checkout-steps > div.active{
+  border-top-color: #f08000;
+  color: #f08000;
 }

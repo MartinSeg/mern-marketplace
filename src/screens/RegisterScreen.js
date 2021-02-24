@@ -63,6 +63,7 @@ const RegisterScreen = (props) => {
                     <input type='password' onChange={ e => setConfirmPassword(e.target.value) } placeholder='Confirm Password'/> 
                 </div>
                 <div>
+                    <label/>
                     <button className='primary' type='submit'>Register</button>
                 </div>
                 <div>
