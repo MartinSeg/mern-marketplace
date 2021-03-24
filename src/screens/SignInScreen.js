@@ -11,7 +11,7 @@ const SignInScreen = (props) => {
     const dispatch = useDispatch();
     const [ email, setEmail ] = useState(null);
     const [ password, setPassword ] = useState(null);
-    
+
     const redirect = props.location.search
         ? props.location.search.split('=')[1]
         : '/'
